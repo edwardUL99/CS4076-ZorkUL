@@ -663,6 +663,7 @@ void MainWindow::processItem(Item *item) {
                 ui->textEdit->append(text);
                 inventory->addUnlockedItem(luckyItem);
                 character.addItem(luckyItem);
+                ui->comboBox->removeItem(ui->comboBox->findText(luckyItem->getShortDescription().c_str()));
                 processItem(luckyItem);
             } else {
                 ui->textEdit->append("You have picked up every unlocked item, so the Lucky Charm could not find anything\n");
